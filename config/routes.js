@@ -31,14 +31,12 @@ routes.post('/calculate', (req, res) => {
     const formattedBmi = Number(roundedBmi);
     const interpretation = imc.interpretarIMC(formattedBmi); 
 
-    console.log(numericHeight, numericWeight, formattedBmi);
-
     const response = {
         bmi,
         interpretation
     };
 
-    return res.json(response);
+    return res.json("teste");
 
 });
 
