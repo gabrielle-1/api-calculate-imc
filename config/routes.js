@@ -36,7 +36,7 @@ routes.post('/calculate', (req, res) => {
         interpretation
     };
 
-    return res.json("teste");
+    return res.json("height: " + height + " weight" + weight);
 
 });
 
