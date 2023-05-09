@@ -6,17 +6,14 @@ const bodyParser = require('body-parser');
 const routes = require('./config/routes');
 
 const app = express();
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    next();
-});
+
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
 app.use(routes);
 
 app.use(cors({
-    origin: '*'
+  origin: '*'
 }));
 
 app.listen(21262, () =>{

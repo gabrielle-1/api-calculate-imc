@@ -1,18 +1,21 @@
 const express = require('express');
 const imc = require('../imc');
 const routes = express.Router();
+const multer = require('multer');
+const upload = multer();
 
 let db = [
     {'1': {Nome: 'Cliente1', Idade: '20'}},
     {'2': {Nome: 'Cliente2', Idade: '40'}}
 ];
 
+
 routes.get('/', (req, res) => {
     return res.json(db);
 });
 
 // Calcular IMC
-routes.post('/calculate', (req, res) => {
+routes.post('/calculate', upload.none(), (req, res) => {
     const { height, weight } = req.body;
   
     return res.json(req.body);
