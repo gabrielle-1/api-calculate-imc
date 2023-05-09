@@ -15,6 +15,10 @@ routes.get('/', (req, res) => {
 routes.post('/calculate', (req, res) => {
     const { height, weight } = req.body;
   
+    console.log(height);
+    console.log(weight);
+    console.log(req);
+
     if (!height || !weight) {
       return res.status(400).json({ error: 'Por favor, forneça a altura e o peso.' });
     }
