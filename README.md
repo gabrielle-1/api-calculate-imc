@@ -29,7 +29,7 @@ To use this API, follow these steps:
 ## Example Request
 
 POST /imc HTTP/1.1
-Host: [localhost:21262/calculate](https://calculate-imc-api-git-main-gabrielle-1.vercel.app/calculate)
+Host: https://calculate-imc-api-git-main-gabrielle-1.vercel.app/calculate
 Content-Type: application/json
 
 {
