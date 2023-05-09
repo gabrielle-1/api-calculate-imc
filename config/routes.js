@@ -13,30 +13,35 @@ routes.get('/', (req, res) => {
 
 // Calcular IMC
 routes.post('/calculate', (req, res) => {
-    const { height, weight } = req.body;  
+    const { height, weight } = req.body;
+  
+    return res.json("body: " + req);
 
-    // if (!height || !weight) {
-    //   return res.status(400).json({ error: 'Por favor, forneça a altura e o peso.' });
-    // }
+
+    if (!height || !weight) {
+      return res.status(400).json({ error: 'Por favor, forneça a altura e o peso.' });
+    }
 
     const numericHeight = Number(height);
     const numericWeight = Number(weight);
 
-    // if (numericHeight <= 0 || numericWeight <= 0) {
-    //     return res.status(400).json({ error: 'A altura e o peso devem ser maiores que zero.' });
-    // }    
+    if (numericHeight <= 0 || numericWeight <= 0) {
+        return res.status(400).json({ error: 'A altura e o peso devem ser maiores que zero.' });
+    }    
 
     const bmi = imc.calcularIMC(numericHeight, numericWeight);
     const roundedBmi = bmi.toFixed(2).toString().substring(0, 2);
     const formattedBmi = Number(roundedBmi);
     const interpretation = imc.interpretarIMC(formattedBmi); 
 
+    console.log(numericHeight, numericWeight, formattedBmi);
+
     const response = {
         bmi,
         interpretation
     };
 
-    return res.json("height: " + height + " weight" + weight);
+    return res.json(response);
 
 });
 
