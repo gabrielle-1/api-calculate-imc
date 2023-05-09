@@ -24,12 +24,12 @@ To use this API, follow these steps:
 1. Clone this repository to your local machine.
 2. Install the necessary dependencies by running `npm install`.
 3. Start the server by running `npm start`.
-4. Send a `POST` request to `http://localhost:3000/imc` with the `weight` and `height` parameters in the request body.
+4. Send a `POST` request to `https://calculate-imc-api-git-main-gabrielle-1.vercel.app/calculate` with the `weight` and `height` parameters in the request body.
 
 ## Example Request
 
 POST /imc HTTP/1.1
-Host: https://calculate-imc-api-git-main-gabrielle-1.vercel.app/calculate
+Host: https://calculate-imc-api-git-main-gabrielle-1.vercel.app
 Content-Type: application/json
 
 {
