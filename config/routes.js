@@ -16,7 +16,6 @@ routes.get('/', (req, res) => {
 
 // Calcular IMC
 routes.post('/calculate', upload.none(), (req, res) => {
-    return res.json(req.body);
 
     const { height, weight } = req.body;    
 
