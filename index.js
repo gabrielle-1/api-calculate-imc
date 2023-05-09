@@ -11,6 +11,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
 app.use(routes);
+app.use(cors());
 
 app.listen(21262, () =>{
     console.log('Expressa started em http://localhost:21262')
