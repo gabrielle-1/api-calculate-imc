@@ -4,7 +4,7 @@ This project is a simple API to calculate the IMC (Body Mass Index) using Node.j
 
 ## Method
 
-This API has only one method, which is a `POST` request to the endpoint `/imc`.
+This API has only one method, which is a `POST` request to the endpoint `/calculate`.
 
 ### Request Parameters
 
