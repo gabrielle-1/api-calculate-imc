@@ -17,13 +17,10 @@ routes.get('/', (req, res) => {
 
 // Calcular IMC
 routes.post('/calculate', upload.none(), (req, res) => {        
+    
+    res.header('Access-Control-Allow-Origin',  '*');
 
-    const body = {
-        height: 1.75,
-        weight: 65
-    }
-
-    const { height, weight } = body;    
+    const { height, weight } = req.body;    
 
     if (!height || !weight) {
       return res.status(400).json({ error: 'Por favor, forneça a altura e o peso.' });
