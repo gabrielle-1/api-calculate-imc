@@ -11,6 +11,7 @@ let db = [
 
 
 routes.get('/', (req, res) => {
+    res.header('Access-Control-Allow-Origin',  '*');
     return res.json(db);
 });
 
